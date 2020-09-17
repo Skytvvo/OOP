@@ -24,6 +24,11 @@ namespace oop_2
             ulong ulongType = 999999999999;
             short shortType = 1000;
             ushort ushortType = 10000;
+
+            dynamic dynType = 1.22f;
+            string strType = "some text";
+            object objT = strType;
+
             Console.WriteLine("types:"+booleanType+' '+ byteType + ' ' + 
                 sbyteType + ' ' + charType + ' ' + decimalType + ' ' + doubleType + ' ' +
                 floatType + ' ' + intType + ' ' + uintType + ' ' + longType + ' ' + 
