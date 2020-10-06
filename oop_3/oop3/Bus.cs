@@ -7,7 +7,7 @@ using Microsoft.VisualBasic;
 
 namespace oop3
 {
-    public class Bus
+    public partial class Bus
     { 
         //static
         static readonly DateTime dateCreationOfPark;
