@@ -19,6 +19,7 @@ namespace oop4
             return sum;
 
         }
+
         public static int CountDiffMinMax(LinkedList A)
         {
             int max = A.Head.data;
@@ -53,7 +54,7 @@ namespace oop4
         public static int ListSum(this LinkedList list)
         {
             int sum = 0;
-
+            
             for (LinkedList.Node p = list.Head; p != null; p = p.next)
             {
                 sum += p.data;

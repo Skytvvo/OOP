@@ -148,7 +148,7 @@ namespace oop4
 
         public static LinkedList operator <( LinkedList result, LinkedList item)
         {
-
+            
             for(Node p = item.head; p!= null; p = p.next)
             {
                 result.AddBack(p.data);
