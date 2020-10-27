@@ -8,6 +8,11 @@ using oop_6;
 
 namespace oop_5
 {
+    public interface IComparable
+    {
+        int CompareTo(object o);
+    }
+
     public interface CONFLICT_INTERFACE
     {
             void CanMove();
