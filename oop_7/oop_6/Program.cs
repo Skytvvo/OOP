@@ -50,8 +50,8 @@ namespace oop_5
                 container.Add(basketball);
                 container.Add(banch);
                 container.Add(bars);
-
-
+                
+                
 
 
                 container.PrintToConsole();
