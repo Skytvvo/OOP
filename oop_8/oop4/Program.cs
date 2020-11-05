@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Text.Json;
 using System.ComponentModel;
+using System.Diagnostics;
 
 namespace oop4
 {
@@ -21,29 +22,30 @@ namespace oop4
             {
                 
                     
-                LinkedList<Inventory,Sport> Listing = new LinkedList<Inventory,Sport>();
-                
-                Sport hard = new Sport("Football", 5000, Inventory.State.New);
-                Sport easy = new Sport("Athletics", 25, Inventory.State.New);
+                LinkedList<Inventory> Listing = new LinkedList<Inventory>();
 
-                Listing.Add(hard);
-                Listing.Add(easy);
-                Listing.Add(hard);
-                Listing.Add(easy);
-                Listing.Add(easy);
+                Inventory cleaningTools = new Inventory("Tools for clean", 150, Inventory.State.New);
+
+                Inventory sportInventory = new Inventory("Inventory for football", 578, Inventory.State.Used);
+
+                Inventory athleticTools = new Inventory("Light athletic inventory", 269, Inventory.State.Used);
+
+                Listing.Add(cleaningTools);
+                Listing.Add(sportInventory);
+                Listing.Add(athleticTools);
+
+                Listing.Delete(sportInventory);
+
                 Listing.View();
 
-                Listing.Delete(hard);
-
-                Listing.View();
+                Listing.Add(sportInventory);
 
                 Console.WriteLine("\n============================\n");
 
-                LinkedList<Inventory, long> linkedList = new LinkedList<Inventory, long>();
-                //Call methods to trigger an exception
+                
 
-                ClassWriter<Inventory, Sport>.WriteData(Listing);
-                LinkedList<Inventory, Sport> copy = ClassWriter<Inventory, Sport>.ReadData(Listing.Path);
+                ClassWriter<Inventory>.WriteData(Listing);
+                LinkedList<Inventory> copy = ClassWriter<Inventory>.ReadData(Listing.Path);
 
                 copy.View();
 

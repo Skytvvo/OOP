@@ -8,7 +8,7 @@ namespace oop4
 {
     //serializable - сериализация, нужна для сохранения сложных объектов, дисериализация - наоборот
     //metanit: Сериализация представляет процесс преобразования какого-либо объекта в поток байтов
-    [Serializable] public class LinkedList<T, U> : ICloneable, GenerInter<T> where T : Inventory
+    [Serializable] public class LinkedList<T> : ICloneable, GenerInter<T> where T : class
     {
         //=======================================
         //Код ниже - код по восьмой лабе

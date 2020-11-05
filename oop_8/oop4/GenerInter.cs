@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace oop4
 {
-    public interface GenerInter<U>
+    public interface GenerInter<T>
     {
-        void Add(U item);
-        void Delete(U item);
+        void Add(T item);
+        void Delete(T item);
         void View();
     }
 }
