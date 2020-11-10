@@ -8,11 +8,10 @@ namespace oop4
 {
     //serializable - сериализация, нужна для сохранения сложных объектов, дисериализация - наоборот
     //metanit: Сериализация представляет процесс преобразования какого-либо объекта в поток байтов
-    [Serializable] public class LinkedList<T> : ICloneable, GenerInter<T> where T : class
+    [Serializable] public class LinkedList<T> : GenerInter<T> where T : class
     {
         //=======================================
         //Код ниже - код по восьмой лабе
-
 
         private string path;
         public string Path
@@ -23,9 +22,7 @@ namespace oop4
             }
         }
 
-        public List<T> CollectionList = new List<T>();
-
-       
+        public List<T> CollectionList = new List<T>();       
 
         public LinkedList(int size = 10, string path = @"D:\projects\labs\3-semester\oop\oop_8\oop4\sourceFile.txt")
         {
@@ -40,7 +37,6 @@ namespace oop4
 
             this.CollectionList.Add(item as T);
         }
-        
         public void Delete(T item)
         {
             if (!(item is T))
@@ -52,10 +48,6 @@ namespace oop4
         {
             CollectionList.ForEach((item) => Console.WriteLine(item));
         }
-      
-       
-
-       
 
         //=======================================
 
