@@ -26,7 +26,10 @@ namespace oop_9
             Thread.Sleep(duration);
             Console.WriteLine("Done!");
         }
-
+        public Action<string> ToUppercase = (string str) =>
+            {
+                Console.WriteLine(str.ToUpper());
+            };
         static void Main(string[] args)
         {
             User User001 = new User("IlyaProGamer2002", 25);
@@ -41,11 +44,11 @@ namespace oop_9
             User003.OnWork += workEventHandler;
             User003.OnUpgrade += upgradeEventHandler;
 
-            /*User001.StartWork(2000);
+            User001.StartWork(2000);
             User002.StartWork(4000);
-            User003.StartWork(6000);*/
+            User003.StartWork(6000);
 
-            Action<string> process;
+            Action<string> process; 
 
             process = ProcessString.AddSubStr;
             process += ProcessString.DeleteSigns;

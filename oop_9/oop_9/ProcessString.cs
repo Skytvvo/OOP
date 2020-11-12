@@ -7,37 +7,37 @@ using System.Threading.Tasks;
 
 namespace oop_9
 {
-    internal class ProcessString
+    static internal class ProcessString
     {
 
-        static public void ToUppercase(string str)
+        static public Action<string> ToUppercase = (string str) =>
         {
             Console.WriteLine(str.ToUpper());
-        }
+        };
 
-        static public void DeleteSpace(string str)
-        {            
-            Console.WriteLine(String.Join("", str.Split(' '))); ;
-        }
-
-        static public void DeleteSigns(string str)
+        static public Action<string> DeleteSpace = (string str) =>
         {
-            Console.WriteLine(String.Join("", str.Split(',','.',':',';')));
-        }
+            Console.WriteLine(String.Join("", str.Split(' ')));
+        };
 
-        static public void AddSubStr(string str)
+        static public Action<string> DeleteSigns = (string str) =>
+        {
+            Console.WriteLine(String.Join("", str.Split(',', '.', ':', ';')));
+        };
+
+        static public Action<string> AddSubStr = (string str) =>
         {
             Console.WriteLine("Enter symbol");
-            string sym = Convert.ToString(Console.Read());
+            string sym = Convert.ToString(Console.ReadLine());
 
-            Console.WriteLine(String.Concat(str,sym));
-        }
+            Console.WriteLine(String.Concat(str, sym));
+        };
 
-        static public void UpperFirstLetter(string str)
+        static public Action<string> UpperFirstLetter = (string str) =>
         {
             Char.ToUpper(str[0]);
             Console.WriteLine(str);
-        }
+        };
 
         static public void UseAction(string str, Action<string> delAct)
         {
