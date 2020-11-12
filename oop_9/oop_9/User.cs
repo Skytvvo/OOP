@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace oop_9
 {
@@ -12,45 +14,21 @@ namespace oop_9
 
     internal class User
     {
-        private string name;
-        private byte skillLevel; 
-
-        public string GetName
+        //обработчик событий для OnUpgrade
+        public static void upgradeEventHandler(byte increaseSkillLevelOn)
         {
-            get
-            {
-                return this.name;
-            }
+            Console.WriteLine($"Skill was increased by {increaseSkillLevelOn} Lvl");
         }
 
-        public byte GetSkillLevel
+        //обработчик событий для OnWork
+        public static void workEventHandler(int duration)
         {
-            get
-            {
-                return this.skillLevel;
-            }
-        }
 
-        public event WorkHandler OnWork;
-        public event UpgradeHandler OnUpgrade;
-        
-        public User(string name, byte skillLevel)
-        {
-            this.name = name;
-            this.skillLevel = skillLevel;
+            Console.WriteLine("Working...");
+            Console.WriteLine($"Wait {duration} ms");
+            Thread.Sleep(duration);
+            Console.WriteLine("Done!");
         }
-
-        public void StartWork(int duration)
-        {
-            Console.WriteLine($"User {this.name} with skill-level {this.skillLevel} started to work");
-            OnWork?.Invoke(duration);
-            if (duration > 5000)
-            {
-                skillLevel++;
-                OnUpgrade?.Invoke(1);
-            }
-        }
-
 
     }
 
