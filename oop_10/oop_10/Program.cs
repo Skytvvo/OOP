@@ -4,11 +4,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.Concurrent;
+using System.Collections.Specialized;
+using System.Collections.ObjectModel;
 
 namespace oop_10
 {
     class Program
     {
+        public static void onChangeCollection(object Sender, NotifyCollectionChangedEventArgs e)
+        {
+            switch(e.Action)
+            {
+                case NotifyCollectionChangedAction.Add:
+                    {
+                        Console.WriteLine($"Object {Sender.GetType()} caused event because of adding");
+                        break;
+                    }
+                case NotifyCollectionChangedAction.Remove:
+                    {
+                        Console.WriteLine($"Object {Sender.GetType()} caused event because of removing");
+                        break;
+                    }
+            }
+        }
         static void Main(string[] args)
         {
             try
@@ -74,6 +92,16 @@ namespace oop_10
 
                 Console.WriteLine($"Contains {Vitalik} in HSBD: {HSDB.Contains(Vitalik)}");
                 Console.WriteLine($"Contains {Denis} in HSBD: {HSDB.Contains(Denis)}");
+
+                ObservableCollection<InternerResource<string>> observable = new ObservableCollection<InternerResource<string>>
+                {
+                    BY
+                };
+
+                observable.CollectionChanged += onChangeCollection;
+                observable.Add(BY);
+                observable.Add(BY);
+                observable.Remove(BY);
             }
             catch(Exception e)
             {
