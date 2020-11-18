@@ -110,7 +110,10 @@ namespace oop_10
 
         public bool Remove(T item)
         {
-            throw new NotImplementedException();
+                RemoveAt(IndexOf(item));
+            if(!this.Contains(item))
+                return true;
+            return false;
         }
 
         public void RemoveAt(int index)
