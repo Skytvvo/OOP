@@ -5,15 +5,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace oop_10
+namespace oop_12
 {
-    internal class InternerResource<T> : IList<T> 
+
+    internal class Message
+    {
+        public void message(string messages)
+        {
+            Console.WriteLine(messages);
+        }
+}
+
+    internal class IR<T> : IList<T>
     {
 
         private T[] _content;
         private int _size;
         private int _count;
-        public InternerResource(int size)
+        public IR(int size)
         {
             if (size <= 0)
                 throw new Exception("Invalid excretion of size");
@@ -23,7 +32,8 @@ namespace oop_10
             this._count = 0;
         }
 
-        public T this[int index] {
+        public T this[int index]
+        {
 
             get
             {
@@ -78,16 +88,16 @@ namespace oop_10
 
         public void CopyTo(T[] array, int arrayIndex)
         {
-            for(int i = 0; i < this._size; i++)
+            for (int i = 0; i < this._size; i++)
                 array.SetValue(this._content[i], arrayIndex++);
-            
+
         }
 
-        
+
 
         public int IndexOf(T item)
         {
-            for(int i = 0; i < this._size;i++)
+            for (int i = 0; i < this._size; i++)
             {
                 if (this._content[i].Equals(item))
                     return i;
@@ -97,10 +107,10 @@ namespace oop_10
 
         public void Insert(int index, T item)
         {
-            if (index <= this._size && index >= 0 && this._count + 1 <= this._size) 
+            if (index <= this._size && index >= 0 && this._count + 1 <= this._size)
             {
                 this._count++;
-                for(int i  = this.Count - 1; i > index; i--)
+                for (int i = this.Count - 1; i > index; i--)
                 {
                     this._content[i] = this._content[i - 1];
                 }
@@ -110,8 +120,8 @@ namespace oop_10
 
         public bool Remove(T item)
         {
-                RemoveAt(IndexOf(item));
-            if(!this.Contains(item))
+            RemoveAt(IndexOf(item));
+            if (!this.Contains(item))
                 return true;
             return false;
         }
@@ -120,7 +130,7 @@ namespace oop_10
         {
             if (index >= 0 && index <= this._count)
             {
-                for (int i = index; i < this.Count-1; i++)
+                for (int i = index; i < this.Count - 1; i++)
                 {
                     this._content[i] = this._content[i + 1];
                 }
@@ -134,7 +144,8 @@ namespace oop_10
         }
         public IEnumerator<T> GetEnumerator() => this._content.Cast<T>().GetEnumerator();
 
-        public void method(string message)
+
+        public void method(string message = "Hello world")
         {
             Console.WriteLine(message);
         }

@@ -16,9 +16,10 @@ namespace oop_11
 
             string[] summer = { "June", "July", "August" };
             string[] winter = { "December", "January", "February" };
-
-            string[] Months = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
-
+            string[] autumn = { "September","October", "November" };
+            string[] spring = { "March", "April", "May" };
+          
+            var Months = winter.Union(spring).Union(summer).Union(autumn);
 
 
             var FirstRequest = Months.Where(t => t.Length == n);
