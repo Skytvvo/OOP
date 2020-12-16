@@ -11,22 +11,34 @@ namespace oop_13
     
     static internal class KIVLog
     {
-        static public void ListenUserActivity(MethodInfo Method, FileInfo File, DateTime Time, string Path )
-        {
-            StreamWriter OutFile = new StreamWriter(Path, true);
+        static string logPath = Directory.GetCurrentDirectory() + @"\UserActivity.log";
+        
 
-            OutFile.WriteLine($"[{Time.Date}]: User use {Method.Name} from {File.FullName};");
+
+        static KIVLog()
+        {
+
+            StreamWriter OutFile = new StreamWriter(logPath, false);
+            OutFile.WriteLine("User activity log protocol:");
+            OutFile.Close();
+        }
+        static public void ListenUserActivity(MethodBase Method, FileInfo File, DateTime Time, string Path )
+        {
+            
+           StreamWriter OutFile = new StreamWriter(Path, true);
+            
+            OutFile.WriteLine($"[{Time.TimeOfDay}]: User use {Method.Name} of {File.Name} from {File.Directory};");
 
             OutFile.Close();
         }
-        static public void ListenUserActivity(MethodInfo method, FileInfo File, DateTime Time)
+        static public void ListenUserActivity(MethodBase method, FileInfo File, DateTime Time)
         {
-            ListenUserActivity(method, File, Time, Directory.GetCurrentDirectory() + @"\UserActivity.log");
+            ListenUserActivity(method, File, Time, logPath);
         }
 
-        static public void ListenUserActivity(MethodInfo method, FileInfo File)
+        static public void ListenUserActivity(MethodBase method, FileInfo File)
         {
-            ListenUserActivity(method, File, DateTime.Now);
+            ListenUserActivity(method, File, DateTime.Now); 
         }
     }
 }
