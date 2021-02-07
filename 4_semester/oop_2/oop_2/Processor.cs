@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace oop_2
 {
+    [Serializable]
     public class Processor
     {
         
+        public enum processorBit
+        {
+            x32, x64
+        }
 
         string manufacter;
         public string Manufactor
@@ -75,8 +80,8 @@ namespace oop_2
             }
         }
 
-        byte bitArchitecture;
-        public byte BitArchitecture
+        processorBit bitArchitecture;
+        public processorBit BitArchitecture
         {
             get
             {
@@ -126,19 +131,12 @@ namespace oop_2
                 this.L3 = value;
             }
         }
-
-        public Processor(string manufacter, string series, string model, short cores,int frenquecy, byte bitArchitecture, int L1, int L2, int L3)
+        public Processor()
         {
-            this.manufacter = manufacter;
-            this.series = series;
-            this.model = model;
-            this.cores = cores;
-            this.frenquecy = frenquecy;
-            this.bitArchitecture = bitArchitecture;
-            this.L1 = L1;
-            this.L2 = L2;
-            this.L3 = L3;
-        }
 
+        }
+       
+
+        
     }
 }

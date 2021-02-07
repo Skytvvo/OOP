@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace oop_2
 {
+    [Serializable]
     public class Computer
     {
         public enum ComputerTypes {
@@ -101,8 +102,8 @@ namespace oop_2
             }
         }
 
-        DateTime purchaseTime;
-        public DateTime PurchaseTime
+        string purchaseTime;
+        public string PurchaseTime
         {
             get
             {
@@ -115,7 +116,7 @@ namespace oop_2
 
         }
 
-        public Computer(ComputerTypes type, Processor processor, string videocard, RamTypes ramType, int driveSize, DriveTypes driveType, DateTime purchaseTime)
+        public Computer(ComputerTypes type, Processor processor, string videocard, RamTypes ramType, int driveSize, DriveTypes driveType, string purchaseTime)
         {
             this.type = type;
             this.processor = processor;
@@ -124,6 +125,11 @@ namespace oop_2
             this.driveSize = driveSize;
             this.driveType = driveType;
             this.purchaseTime = purchaseTime;
+        }
+
+        public Computer()
+        {
+
         }
     }
 }

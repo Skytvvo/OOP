@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ec283e45-a099-4319-8621-5f2d3fe8c1a2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/oop_2/Computer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/oop_2/Computer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oop_2/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/oop_2/Form1.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oop_2/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/oop_2/Form1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oop_2/Form1.resx" beforeDir="false" afterPath="$PROJECT_DIR$/oop_2/Form1.resx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oop_2/Processor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/oop_2/Processor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oop_2/oop_2.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/oop_2/oop_2.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_1/test.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_10/oop_10.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_10/oop_10/App.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_10/oop_10/InternerResource.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_10/oop_10/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_10/oop_10/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_10/oop_10/oop_10.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_11/oop_11.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_11/oop_11/App.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_11/oop_11/Bus.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_11/oop_11/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_11/oop_11/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_11/oop_11/oop_11.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_12/oop_12.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_12/oop_12/App.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_12/oop_12/IR.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_12/oop_12/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_12/oop_12/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_12/oop_12/StaticReflection.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_12/oop_12/oop_12.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_13/oop_13.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_13/oop_13/App.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_13/oop_13/KIVDirInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_13/oop_13/KIVDiskInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_13/oop_13/KIVFileInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_13/oop_13/KIVFileManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_13/oop_13/KIVLog.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_13/oop_13/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_13/oop_13/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_13/oop_13/oop_13.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_14/oop_14.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_14/oop_14/App.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_14/oop_14/Inventory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_14/oop_14/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_14/oop_14/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_14/oop_14/Sport.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_14/oop_14/oop_14.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_15/oop_15.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_15/oop_15/App.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_15/oop_15/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_15/oop_15/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_15/oop_15/oop_15.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_16/oop_16.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_16/oop_16/App.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_16/oop_16/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_16/oop_16/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_16/oop_16/oop_16.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_2/oop_2.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_2/oop_2/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_2/oop_2/oop_2.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_3/oop3.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_3/oop3/Bus.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_3/oop3/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_3/oop3/oop3.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_4/oop4.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_4/oop4/App.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_4/oop4/LinkedList.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_4/oop4/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_4/oop4/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_4/oop4/StatisticOperation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_4/oop4/oop4.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_5/oop_5.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_5/oop_5/App.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_5/oop_5/Ball.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_5/oop_5/Banch.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_5/oop_5/Bars.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_5/oop_5/Basketball.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_5/oop_5/Inventory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_5/oop_5/Manufacturer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_5/oop_5/Printer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_5/oop_5/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_5/oop_5/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_5/oop_5/Sport.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_5/oop_5/Tennis.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_5/oop_5/Tools.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_5/oop_5/Workout.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_5/oop_5/oop_5.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_6/oop_6.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_6/oop_6/App.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_6/oop_6/Ball.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_6/oop_6/Banch.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_6/oop_6/Bars.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_6/oop_6/Basketball.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_6/oop_6/Controller.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_6/oop_6/GYM.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_6/oop_6/Inventory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_6/oop_6/Manufacturer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_6/oop_6/Printer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_6/oop_6/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_6/oop_6/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_6/oop_6/Sport.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_6/oop_6/Tennis_1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_6/oop_6/Tennis_2.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_6/oop_6/Tools.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_6/oop_6/Workout.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_6/oop_6/oop_6.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_7/oop_6.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_7/oop_6/App.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_7/oop_6/Ball.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_7/oop_6/Banch.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_7/oop_6/Bars.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_7/oop_6/Basketball.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_7/oop_6/Controller.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_7/oop_6/Error.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_7/oop_6/GYM.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_7/oop_6/Inventory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_7/oop_6/Manufacturer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_7/oop_6/Printer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_7/oop_6/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_7/oop_6/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_7/oop_6/Sport.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_7/oop_6/Tennis_1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_7/oop_6/Tennis_2.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_7/oop_6/Tools.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_7/oop_6/Workout.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_7/oop_6/oop_6.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_8/oop4.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_8/oop4/App.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_8/oop4/ClassWriter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_8/oop4/GenerInter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_8/oop4/Inventory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_8/oop4/LinkedList.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_8/oop4/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_8/oop4/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_8/oop4/oop4.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_8/oop4/packages.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_8/oop4/sourceFile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_9/oop_9.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_9/oop_9/App.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_9/oop_9/Human.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_9/oop_9/ProcessString.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_9/oop_9/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_9/oop_9/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_9/oop_9/User.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_9/oop_9/oop_9.csproj" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1o9bRCe3Oma8RXw8toflbPvot1C" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ec283e45-a099-4319-8621-5f2d3fe8c1a2" name="Default Changelist" comment="" />
+      <created>1612701748809</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1612701748809</updated>
+      <workItem from="1612701750404" duration="17000" />
+      <workItem from="1612701785417" duration="5000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
