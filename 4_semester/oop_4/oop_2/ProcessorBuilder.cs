@@ -10,18 +10,18 @@ namespace oop_2
     {
         public Processor Processor { get; private set; }
 
-        public void CreateProcessor()
+        public ProcessorBuilder()
         {
             Processor = new Processor();
         }
 
-        public abstract void SetManufacter();
+        public abstract void SetManufacter( Manufactur manufactur );
 
-        public abstract void SetBits();
+        public abstract void SetBits( Bits bits );
 
-        public abstract void SetPower();
+        public abstract void SetPower( Power power );
 
-        public abstract void SetCache();
+        public abstract void SetCache( Cache cache );
 
 
     }

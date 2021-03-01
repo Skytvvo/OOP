@@ -6,95 +6,99 @@ using System.Threading.Tasks;
 
 namespace oop_2
 {
-    public class ServerProcessorBuilder : ProcessorBuilder
+    public class PCProcessorBuilder : ProcessorBuilder
     {
-        public override void SetBits()
+        public override void SetBits(Bits bits)
         {
-            this.Processor.Bits = new Bits { BitArchitecture = Bits.processorBit.x64 };
+            this.Processor.Bits = bits; 
         }
 
-        public override void SetCache()
+        public override void SetCache(Cache cache)
         {
-            this.Processor.Cache = new Cache { L1 = 128, L2 = 512, L3 = 4096 };
+            this.Processor.Cache = cache;
         }
 
-        public override void SetManufacter()
+        public override void SetManufacter(Manufactur manufactur)
         {
-            this.Processor.Manufactur = new Manufactur { man = "Intel", Model = "xeon", Series = "Ice-Lake" };
+            this.Processor.Manufactur = manufactur;
         }
 
-        public override void SetPower()
+        public override void SetPower(Power power)
         {
-            this.Processor.Power = new Power { Cores = 8, Frenquecy = 4900 };
+            this.Processor.Power = power;
         }
     }
 
-    public class PCProcessorBuilder : ProcessorBuilder
+    public class ServerProcessorBuilder : ProcessorBuilder
     {
-        public override void SetBits()
+        public override void SetBits(Bits bits)
         {
             this.Processor.Bits = new Bits { BitArchitecture = Bits.processorBit.x64 };
         }
 
-        public override void SetCache()
+        public override void SetCache(Cache cache)
         {
-            this.Processor.Cache = new Cache { L1 = 128, L2 = 512, L3 = 4096 };
+            this.Processor.Cache = cache;
         }
 
-        public override void SetManufacter()
+        public override void SetManufacter(Manufactur manufactur)
         {
-            this.Processor.Manufactur = new Manufactur { man = "Intel", Model = "xeon", Series = "Ice-Lake" };
+            this.Processor.Manufactur = new Manufactur { man="Intel", Model="Xeon", Series="Server"};
         }
 
-        public override void SetPower()
+        public override void SetPower(Power power)
         {
-            this.Processor.Power = new Power { Cores = 8, Frenquecy = 4900 };
+            this.Processor.Power = power;
         }
     }
 
     public class LaptopProcessorBuilder : ProcessorBuilder
     {
-        public override void SetBits()
+        public override void SetBits(Bits bits)
         {
-            this.Processor.Bits = new Bits { BitArchitecture = Bits.processorBit.x64 };
+            this.Processor.Bits = bits;
         }
 
-        public override void SetCache()
+        public override void SetCache(Cache cache)
         {
-            this.Processor.Cache = new Cache { L1 = 128, L2 = 512, L3 = 4096 };
+            this.Processor.Cache = cache;
         }
 
-        public override void SetManufacter()
+        public override void SetManufacter(Manufactur manufactur)
         {
-            this.Processor.Manufactur = new Manufactur { man = "Intel", Model = "xeon", Series = "Ice-Lake" };
+            this.Processor.Manufactur = manufactur;
         }
 
-        public override void SetPower()
+        public override void SetPower(Power power)
         {
-            this.Processor.Power = new Power { Cores = 8, Frenquecy = 4900 };
+            this.Processor.Power = power;
         }
     }
-    public class WorkingStationProcessorBuilder : ProcessorBuilder
+
+    public class WorkStationProcessorBuilder : ProcessorBuilder
     {
-        public override void SetBits()
+        public override void SetBits(Bits bits)
         {
-            this.Processor.Bits = new Bits { BitArchitecture = Bits.processorBit.x64 };
+            this.Processor.Bits = new Bits { BitArchitecture= Bits.processorBit.x64 };
         }
 
-        public override void SetCache()
+        public override void SetCache(Cache cache)
         {
-            this.Processor.Cache = new Cache { L1 = 128, L2 = 512, L3 = 4096 };
+            this.Processor.Cache = cache;
         }
 
-        public override void SetManufacter()
+        public override void SetManufacter(Manufactur manufactur)
         {
-            this.Processor.Manufactur = new Manufactur { man = "Intel", Model = "xeon", Series = "Ice-Lake" };
+            this.Processor.Manufactur = new Manufactur {  
+                man="Intel",
+                Model="Workstation processor",
+                Series="Ice-Lake"
+            };
         }
 
-        public override void SetPower()
+        public override void SetPower(Power power)
         {
-            this.Processor.Power = new Power { Cores = 8, Frenquecy = 4900 };
+            this.Processor.Power = power;
         }
     }
-
 }

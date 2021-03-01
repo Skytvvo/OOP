@@ -58,9 +58,9 @@ namespace oop_2
 
             foreach (var comp in data)
             {
-                if (Regex.IsMatch(comp._Processor.Manufactor, $@"(\w*){this.currentManafacture}(\w)*"))
+                if (Regex.IsMatch(comp.hardware.Processor.Manufactur.man, $@"(\w*){this.currentManafacture}(\w)*"))
                 {
-                    if (Regex.IsMatch(comp._Processor.Model, $@"(\w*){this.currentModel}(\w)*"))
+                    if (Regex.IsMatch(comp.hardware.Processor.Manufactur.Model, $@"(\w*){this.currentModel}(\w)*"))
                     {
                         /* this.richTextBox3.Text += comp._Processor.Manufactor + ' ' + comp._Processor.Model + '\n';*/
                         response.Add(comp);
@@ -73,7 +73,7 @@ namespace oop_2
         private void button2_Click(object sender, EventArgs e)
         {
             ClearMessages();
-            this.matches = this.matches.OrderBy(ITEM=>ITEM._Processor.Frenquecy).OrderBy(item => item.DriveSize);
+            this.matches = this.matches.OrderBy(ITEM=>ITEM.hardware.Processor.Power.Frenquecy).OrderBy(item => item.hardware.DriveSize);
             printReult(this.matches);
             Changestatus("Sort");
         }
@@ -81,7 +81,7 @@ namespace oop_2
         {
             foreach (var item in data)
             {
-                this.richTextBox3.Text += item._Processor.Manufactor + " " + item._Processor.Model + " " + item.DriveSize + " " + item._Processor.Frenquecy + '\n';
+                this.richTextBox3.Text += item.hardware.Processor.Manufactur.man + " " + item.hardware.Processor.Manufactur.Model + " " + item.hardware.DriveSize + " " + item.hardware.Processor.Power.Frenquecy + '\n';
             }
         }
         void ClearMessages()

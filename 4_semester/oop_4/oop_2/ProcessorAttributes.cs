@@ -41,7 +41,7 @@ namespace oop_2
 
     public class Power
     {
-        public short Cores
+        public int Cores
         {
             get; set;
         }

@@ -11,6 +11,8 @@ using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Runtime.Serialization;
 using System.ComponentModel.DataAnnotations;
+using System.Xml.Serialization;
+
 
 namespace oop_2
 {
@@ -24,34 +26,38 @@ namespace oop_2
         public Form1()
         {
             InitializeComponent();
+
+            this.FontHeight = Singleton.GetInstance().config.FontSize;
+            this.Font = Singleton.GetInstance().config.FontType;
+            this.FontHeight = Singleton.GetInstance().config.FontSize;
+
+
             this.Laboratory = new List<Computer>();
-            this.currentComputer = new Computer();
-            this.currentComputer.PurchaseTime = Convert.ToString(dateTimePicker1.Value);
+           /* this.currentComputer = new Computer();
+            this.currentComputer.PurchaseTime = Convert.ToString(dateTimePicker1.Value);*/
 
 
-            this.comboBox1.Items.Add(Computer.ComputerTypes.notebook);
-            this.comboBox1.Items.Add(Computer.ComputerTypes.PC);
-            this.comboBox1.Items.Add(Computer.ComputerTypes.Server);
-            this.comboBox1.Items.Add(Computer.ComputerTypes.workingStation);
+            this.comboBox1.Items.Add(ComputerTypes.Server);
+            this.comboBox1.Items.Add(ComputerTypes.workingStation);
+            this.comboBox1.Items.Add(ComputerTypes.notebook);
+            this.comboBox1.Items.Add(ComputerTypes.PC);
             this.comboBox1.SelectedIndex = 1;
 
-            this.comboBox2.Items.Add(Computer.RamTypes.ddr1);
-            this.comboBox2.Items.Add(Computer.RamTypes.ddr2);
-            this.comboBox2.Items.Add(Computer.RamTypes.ddr3);
-            this.comboBox2.Items.Add(Computer.RamTypes.ddr4);
-            this.comboBox2.Items.Add(Computer.RamTypes.ddr5);
+            this.comboBox2.Items.Add(RamTypes.ddr1);
+            this.comboBox2.Items.Add(RamTypes.ddr2);
+            this.comboBox2.Items.Add(RamTypes.ddr3);
+            this.comboBox2.Items.Add(RamTypes.ddr4);
+            this.comboBox2.Items.Add(RamTypes.ddr5);
             this.comboBox2.SelectedIndex = 3;
 
-            this.comboBox3.Items.Add(Computer.DriveTypes.hdd);
-            this.comboBox3.Items.Add(Computer.DriveTypes.ssd);
-            this.comboBox3.Items.Add(Computer.DriveTypes.shdd);
+            this.comboBox3.Items.Add(DriveTypes.hdd);
+            this.comboBox3.Items.Add(DriveTypes.ssd);
+            this.comboBox3.Items.Add(DriveTypes.shdd);
             this.comboBox3.SelectedIndex = 1;
-            this.pictureBox1.Image = Image.FromFile(@"D:\projects\labs\3-semester\oop\4_semester\oop_2\oop_2\2.jfif");
+          
             this.pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
 
             this.currentStatus = $"Computers({Laboratory.Count}, ";
-
-            
 
             
             ToolStripMenuItem Search = new ToolStripMenuItem("Search");
@@ -72,13 +78,14 @@ namespace oop_2
             this.toolsToolStripMenuItem.DropDownItems.Add(Back);
 
         }
-
+        
         List<Computer> Laboratory;
 
-        Computer currentComputer;
+        List<Computer> backList = new List<Computer>();
 
-        List<Computer> backList = new List<Computer>(); 
-        
+        Computer reservation;
+
+        Processor Processor { get; set; }        
 
         public string currentStatus;
 
@@ -99,7 +106,7 @@ namespace oop_2
 
         private void AddProcessor(object sender, EventArgs e)
         {
-            Form2 addProcessorForm = new Form2(this.AddProcessorInComputer, this.ChangeStatus);
+            Form2 addProcessorForm = new Form2(this.AddProcessorInComputer, this.ChangeStatus, (ComputerTypes)comboBox1.SelectedItem);
             addProcessorForm.Show();
             ChangeStatus("Open processor editor");
 
@@ -107,36 +114,35 @@ namespace oop_2
 
         public void AddProcessorInComputer(Processor processor)
         {
-            this.currentComputer._Processor = processor;
+            this.Processor = processor;
         }
 
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch(comboBox1.SelectedIndex)
+            switch (comboBox1.SelectedIndex)
             {
                 case 0:
                     {
-                        this.currentComputer.Type = Computer.ComputerTypes.Server;
-                        this.pictureBox1.Image = Image.FromFile(@"D:\projects\labs\3-semester\oop\4_semester\oop_2\oop_2\1.jfif");
+                        this.pictureBox1.Image = Image.FromFile(@"D:\projects\labs\3-semester\oop\4_semester\oop_2\oop_2\3.jfif");
+
                         break;
                     }
                 case 1:
                     {
-                        this.currentComputer.Type = Computer.ComputerTypes.workingStation;
-                        this.pictureBox1.Image = Image.FromFile(@"D:\projects\labs\3-semester\oop\4_semester\oop_2\oop_2\2.jfif");
+                        this.pictureBox1.Image = Image.FromFile(@"D:\projects\labs\3-semester\oop\4_semester\oop_2\oop_2\4.jfif");
+
                         break;
                     }
                 case 2:
                     {
-                        this.currentComputer.Type = Computer.ComputerTypes.notebook;
-                        this.pictureBox1.Image = Image.FromFile(@"D:\projects\labs\3-semester\oop\4_semester\oop_2\oop_2\3.jfif");
+                        this.pictureBox1.Image = Image.FromFile(@"D:\projects\labs\3-semester\oop\4_semester\oop_2\oop_2\1.jfif");
                         break;
                     }
                 case 3:
                     {
-                        this.currentComputer.Type = Computer.ComputerTypes.PC;
-                        this.pictureBox1.Image = Image.FromFile(@"D:\projects\labs\3-semester\oop\4_semester\oop_2\oop_2\4.jfif");
+                        this.pictureBox1.Image = Image.FromFile(@"D:\projects\labs\3-semester\oop\4_semester\oop_2\oop_2\2.jfif");
+
                         break;
                     }
             }
@@ -147,34 +153,7 @@ namespace oop_2
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch(this.comboBox2.SelectedIndex)
-            {
-                case 0:
-                    {
-                        this.currentComputer.TypeOfRam = Computer.RamTypes.ddr1;
-                        break;
-                    }
-                case 1:
-                    {
-                        this.currentComputer.TypeOfRam = Computer.RamTypes.ddr2;
-                        break;
-                    }
-                case 2:
-                    {
-                        this.currentComputer.TypeOfRam = Computer.RamTypes.ddr3;
-                        break;
-                    }
-                case 3:
-                    {
-                        this.currentComputer.TypeOfRam = Computer.RamTypes.ddr4;
-                        break;
-                    }
-                case 4:
-                    {
-                        this.currentComputer.TypeOfRam = Computer.RamTypes.ddr5;
-                        break;
-                    }
-            }
+         
             ChangeStatus("Changed ram type");
 
         }
@@ -196,7 +175,6 @@ namespace oop_2
                 this.richTextBox16.Text = "";
                 return;
             }
-            this.currentComputer.DriveSize = Convert.ToInt32(this.richTextBox16.Text);
             ChangeStatus("Changed size of drive");
 
         }
@@ -210,38 +188,19 @@ namespace oop_2
 
         private void richTextBox13_TextChanged(object sender, EventArgs e)
         {
-            this.currentComputer.Videocard = this.richTextBox13.Text;
-            ChangeStatus("Changed videocard");
+          ChangeStatus("Changed videocard");
 
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch(this.comboBox3.SelectedIndex)
-            {
-                case 0:
-                    {
-                        this.currentComputer.DriveType = Computer.DriveTypes.ssd;
-                        break;
-                    }
-                case 1:
-                    {
-                        this.currentComputer.DriveType = Computer.DriveTypes.hdd;
-                        break;
-                    }
-                case 2:
-                    {
-                        this.currentComputer.DriveType = Computer.DriveTypes.shdd;
-                        break;
-                    }
-            }
+         
             ChangeStatus("Changed drive type");
 
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            this.currentComputer.PurchaseTime = Convert.ToString( dateTimePicker1.Value);
            ChangeStatus("Changed date");
 
         }
@@ -253,53 +212,55 @@ namespace oop_2
 
         private void Save(object sender, EventArgs e)
         {
-            /* if(
-                 this.currentComputer.Videocard == null ||
-                 this.currentComputer.Videocard == "" ||
-                 this.currentComputer.DriveSize == 0 ||
-                 this.currentComputer._Processor == null ||
-                 this.currentComputer.PurchaseTime == null
-                 )
-             {
-                 //
-                 return;*/
-            //}
 
-            var results = new List<ValidationResult>();
-            var context = new ValidationContext(this.currentComputer);
-            if (!Validator.TryValidateObject(this.currentComputer, context, results, true))
-            {
-                foreach (var error in results)
-                {
-                    MessageBox.Show(
-                        error.ErrorMessage,
-                        "Invalid Error"
-                        );
-                    //Console.WriteLine(error.ErrorMessage);
-                }
-                return;
-            }
-            this.Laboratory.Add(this.currentComputer);
-            this.currentComputer = new Computer();
+            
 
-            this.comboBox3.SelectedIndex = 1;
-            this.comboBox2.SelectedIndex = 3;
-            this.comboBox1.SelectedIndex = 1;
-            this.richTextBox13.Text = "";
-            this.richTextBox16.Text = "";
-            this.dateTimePicker1.Value = DateTime.Now;
+            Computer computer = new Computer(GetFactory());
+            computer.config.SetAttributes((ComputerTypes)comboBox1.SelectedItem, (RamTypes)comboBox2.SelectedItem, (DriveTypes)comboBox3.SelectedItem);
+            computer.hardware.SetAttributes(this.Processor, richTextBox13.Text, Convert.ToInt32(richTextBox16.Text));
+            computer.hardware.SetPurchaseTime(dateTimePicker1.Value.ToString());
+            this.Laboratory.Add(computer);
 
             ChangeStatus("Added computer");
+        }
+
+        private IFactory GetFactory()
+        {
+
+            switch(comboBox1.SelectedIndex)
+            {
+                case 0:
+                    {
+                        return new ServerFactory();
+                    }
+                case 1:
+                    {
+                        return new WorkStationFactory();
+                    }
+
+                case 2:
+                    {
+                        return new LaptopFactory();
+                    }
+                default:
+                    {
+                        return new PCFactory();
+                    }
+            }
+
         }
 
         private void WriteLaboratory(object sender, EventArgs e)
         {
             using(FileStream File = new FileStream(path, FileMode.OpenOrCreate) )
             {
-                DataContractJsonSerializer jsonFile = new DataContractJsonSerializer(typeof(Wrapper));
-                Wrapper data = new Wrapper();
-                data.data = this.Laboratory;
-                jsonFile.WriteObject(File,data);
+                /*                DataContractJsonSerializer jsonFile = new DataContractJsonSerializer(typeof(List<Computer>));
+                */
+
+                /*                jsonFile.WriteObject(File,this.Laboratory);
+                */
+                XmlSerializer formatter = new XmlSerializer(typeof(List<Computer>));
+                formatter.Serialize(File, this.Laboratory);
             }
            ChangeStatus("Wrote data to json file");
 
@@ -309,9 +270,11 @@ namespace oop_2
         {
             using (FileStream File = new FileStream(path, FileMode.OpenOrCreate))
             {
-                DataContractJsonSerializer jsonFile = new DataContractJsonSerializer(typeof(Wrapper));
-                Wrapper savedData =     (Wrapper)jsonFile.ReadObject(File);
-                this.Laboratory = savedData.data;
+                /* DataContractJsonSerializer jsonFile = new DataContractJsonSerializer(typeof(Wrapper));
+                 Wrapper savedData =     (Wrapper)jsonFile.ReadObject(File);
+                 this.Laboratory = savedData.data;*/
+                XmlSerializer formatter = new XmlSerializer(typeof(List<Computer>));
+                this.Laboratory = (List<Computer>)formatter.Deserialize(File);
             }
             this.currentStatus = $"Computers({Laboratory.Count}), ";
             ChangeStatus("Read from json file");
@@ -364,7 +327,7 @@ namespace oop_2
 
         private void button10_Click(object sender, EventArgs e)
         {
-            if (Laboratory.Count == null || Laboratory.Count == 0)
+            if (Laboratory == null || Laboratory.Count == 0)
                 return;
             backList.Add(Laboratory[Laboratory.Count - 1]);
             Laboratory.RemoveAt(Laboratory.Count - 1);
@@ -383,6 +346,12 @@ namespace oop_2
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void CopyBtn_Click(object sender, EventArgs e)
+        {
+            this.reservation = this.Laboratory.Last() as Computer;
+            this.Laboratory.Add(reservation);
         }
     }
 }

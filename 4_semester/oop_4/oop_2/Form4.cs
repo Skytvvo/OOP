@@ -19,14 +19,14 @@ namespace oop_2
             this.dataGridView1.RowCount = this.laboratory.Count();
             for (int i = 0; i < this.dataGridView1.RowCount; i++)
             {
-                this.dataGridView1.Rows[i].Cells[0].Value = this.laboratory[i].Type;
-                this.dataGridView1.Rows[i].Cells[1].Value = this.laboratory[i]._Processor.Model;
-                this.dataGridView1.Rows[i].Cells[2].Value = this.laboratory[i].Videocard;
-                this.dataGridView1.Rows[i].Cells[3].Value = this.laboratory[i].TypeOfRam;
-                this.dataGridView1.Rows[i].Cells[4].Value = this.laboratory[i].DriveType;
-                this.dataGridView1.Rows[i].Cells[5].Value = this.laboratory[i].DriveSize;
-                this.dataGridView1.Rows[i].Cells[6].Value = this.laboratory[i].PurchaseTime;
-                this.dataGridView1.Rows[i].Cells[7].Value = (this.laboratory[i]._Processor.Cores * this.laboratory[i]._Processor.sizeL1 * this.laboratory[i].DriveSize);
+                this.dataGridView1.Rows[i].Cells[0].Value = this.laboratory[i].config.CType;
+                this.dataGridView1.Rows[i].Cells[1].Value = this.laboratory[i].hardware.Processor.Manufactur.Model;
+                this.dataGridView1.Rows[i].Cells[2].Value = this.laboratory[i].hardware.Videocard;
+                this.dataGridView1.Rows[i].Cells[3].Value = this.laboratory[i].config.RType;
+                this.dataGridView1.Rows[i].Cells[4].Value = this.laboratory[i].config.DType;
+                this.dataGridView1.Rows[i].Cells[5].Value = this.laboratory[i].hardware.DriveSize;
+                this.dataGridView1.Rows[i].Cells[6].Value = this.laboratory[i].hardware.PurchaseTime;
+                this.dataGridView1.Rows[i].Cells[7].Value = (this.laboratory[i].hardware.Processor.Power.Cores * this.laboratory[i].hardware.Processor.Cache.L1 * this.laboratory[i].hardware.DriveSize);
             }
             int price = 0;
             for (int i = 0; i < this.dataGridView1.RowCount; i++)

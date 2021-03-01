@@ -53,6 +53,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.CopyBtn = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -61,18 +62,18 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(29, 47);
+            this.label14.Location = new System.Drawing.Point(25, 47);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(33, 17);
+            this.label14.Size = new System.Drawing.Size(32, 16);
             this.label14.TabIndex = 26;
             this.label14.Text = "Тип";
             // 
             // richTextBox13
             // 
-            this.richTextBox13.Location = new System.Drawing.Point(32, 121);
+            this.richTextBox13.Location = new System.Drawing.Point(28, 121);
             this.richTextBox13.MaxLength = 100;
             this.richTextBox13.Name = "richTextBox13";
-            this.richTextBox13.Size = new System.Drawing.Size(214, 29);
+            this.richTextBox13.Size = new System.Drawing.Size(188, 29);
             this.richTextBox13.TabIndex = 29;
             this.richTextBox13.Text = "";
             this.richTextBox13.TextChanged += new System.EventHandler(this.richTextBox13_TextChanged);
@@ -80,36 +81,36 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(29, 160);
+            this.label16.Location = new System.Drawing.Point(25, 160);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(66, 17);
+            this.label16.Size = new System.Drawing.Size(64, 16);
             this.label16.TabIndex = 32;
             this.label16.Text = "Тип ОЗУ";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(29, 217);
+            this.label17.Location = new System.Drawing.Point(25, 217);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(115, 17);
+            this.label17.Size = new System.Drawing.Size(113, 16);
             this.label17.TabIndex = 34;
             this.label17.Text = "Тип накопителя";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(277, 48);
+            this.label18.Location = new System.Drawing.Point(242, 48);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(139, 17);
+            this.label18.Size = new System.Drawing.Size(138, 16);
             this.label18.TabIndex = 36;
             this.label18.Text = "Размер накопителя";
             // 
             // richTextBox16
             // 
-            this.richTextBox16.Location = new System.Drawing.Point(280, 67);
+            this.richTextBox16.Location = new System.Drawing.Point(245, 67);
             this.richTextBox16.MaxLength = 8;
             this.richTextBox16.Name = "richTextBox16";
-            this.richTextBox16.Size = new System.Drawing.Size(214, 29);
+            this.richTextBox16.Size = new System.Drawing.Size(188, 29);
             this.richTextBox16.TabIndex = 35;
             this.richTextBox16.Text = "";
             this.richTextBox16.TextChanged += new System.EventHandler(this.richTextBox16_TextChanged);
@@ -118,26 +119,26 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(277, 99);
+            this.label19.Location = new System.Drawing.Point(242, 99);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(141, 17);
+            this.label19.Size = new System.Drawing.Size(139, 16);
             this.label19.TabIndex = 38;
             this.label19.Text = "Дата приобретения";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(29, 102);
+            this.label15.Location = new System.Drawing.Point(25, 102);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(87, 17);
+            this.label15.Size = new System.Drawing.Size(86, 16);
             this.label15.TabIndex = 30;
             this.label15.Text = "Видеокарта";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(371, 252);
+            this.button1.Location = new System.Drawing.Point(325, 252);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(62, 27);
+            this.button1.Size = new System.Drawing.Size(54, 27);
             this.button1.TabIndex = 39;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
@@ -145,9 +146,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(439, 252);
+            this.button2.Location = new System.Drawing.Point(384, 252);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(55, 27);
+            this.button2.Size = new System.Drawing.Size(48, 27);
             this.button2.TabIndex = 40;
             this.button2.Text = "Read";
             this.button2.UseVisualStyleBackColor = true;
@@ -155,9 +156,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(371, 217);
+            this.button3.Location = new System.Drawing.Point(325, 217);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(62, 29);
+            this.button3.Size = new System.Drawing.Size(54, 29);
             this.button3.TabIndex = 41;
             this.button3.Text = "Print";
             this.button3.UseVisualStyleBackColor = true;
@@ -165,9 +166,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(439, 217);
+            this.button4.Location = new System.Drawing.Point(384, 217);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(55, 29);
+            this.button4.Size = new System.Drawing.Size(48, 29);
             this.button4.TabIndex = 42;
             this.button4.Text = "Write";
             this.button4.UseVisualStyleBackColor = true;
@@ -175,9 +176,9 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(280, 177);
+            this.button5.Location = new System.Drawing.Point(245, 177);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(214, 32);
+            this.button5.Size = new System.Drawing.Size(187, 32);
             this.button5.TabIndex = 43;
             this.button5.Text = "Добавить";
             this.button5.UseVisualStyleBackColor = true;
@@ -186,18 +187,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(277, 160);
+            this.label1.Location = new System.Drawing.Point(242, 160);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 17);
+            this.label1.Size = new System.Drawing.Size(80, 16);
             this.label1.TabIndex = 44;
             this.label1.Text = "Процессор";
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(280, 119);
+            this.dateTimePicker1.Location = new System.Drawing.Point(245, 119);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(214, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(188, 24);
             this.dateTimePicker1.TabIndex = 45;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -206,9 +207,9 @@
             this.comboBox1.DisplayMember = "s";
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(32, 67);
+            this.comboBox1.Location = new System.Drawing.Point(28, 67);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(214, 24);
+            this.comboBox1.Size = new System.Drawing.Size(188, 24);
             this.comboBox1.TabIndex = 46;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -216,9 +217,9 @@
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(32, 177);
+            this.comboBox2.Location = new System.Drawing.Point(28, 177);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(214, 24);
+            this.comboBox2.Size = new System.Drawing.Size(188, 24);
             this.comboBox2.TabIndex = 47;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
@@ -226,17 +227,17 @@
             // 
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(32, 243);
+            this.comboBox3.Location = new System.Drawing.Point(28, 243);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(214, 24);
+            this.comboBox3.Size = new System.Drawing.Size(188, 24);
             this.comboBox3.TabIndex = 48;
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(458, 293);
+            this.button6.Location = new System.Drawing.Point(385, 296);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(59, 28);
+            this.button6.Size = new System.Drawing.Size(48, 23);
             this.button6.TabIndex = 49;
             this.button6.Text = "Close";
             this.button6.UseVisualStyleBackColor = true;
@@ -249,7 +250,8 @@
             this.toolsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(641, 30);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(561, 28);
             this.menuStrip1.TabIndex = 53;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -258,15 +260,15 @@
             this.toolsToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.toolsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(58, 26);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
             this.toolsToolStripMenuItem.Text = "Tools";
             this.toolsToolStripMenuItem.Click += new System.EventHandler(this.toolsToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(276, 234);
+            this.pictureBox1.Location = new System.Drawing.Point(242, 234);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(77, 33);
+            this.pictureBox1.Size = new System.Drawing.Size(67, 33);
             this.pictureBox1.TabIndex = 50;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -278,7 +280,8 @@
             this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 372);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(641, 26);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 12, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(561, 26);
             this.statusStrip1.TabIndex = 54;
             this.statusStrip1.Text = "statusStrip1";
             this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
@@ -290,11 +293,22 @@
             this.toolStripStatusLabel1.Text = "\"\"";
             this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
+            // CopyBtn
+            // 
+            this.CopyBtn.Location = new System.Drawing.Point(325, 296);
+            this.CopyBtn.Name = "CopyBtn";
+            this.CopyBtn.Size = new System.Drawing.Size(54, 23);
+            this.CopyBtn.TabIndex = 55;
+            this.CopyBtn.Text = "Copy";
+            this.CopyBtn.UseVisualStyleBackColor = true;
+            this.CopyBtn.Click += new System.EventHandler(this.CopyBtn_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(641, 398);
+            this.ClientSize = new System.Drawing.Size(561, 398);
+            this.Controls.Add(this.CopyBtn);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button6);
@@ -317,6 +331,7 @@
             this.Controls.Add(this.richTextBox13);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -354,5 +369,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.Button CopyBtn;
     }
 }

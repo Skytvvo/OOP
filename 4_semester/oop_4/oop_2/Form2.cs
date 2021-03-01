@@ -17,7 +17,7 @@ namespace oop_2
 
         public event processorHandler AddProcessor;
         public event ChangeStatusHandler ChangeStatus;
-        public Form2(processorHandler AddProcessorInComputer, ChangeStatusHandler ChnageStatus)
+        public Form2(processorHandler AddProcessorInComputer, ChangeStatusHandler ChnageStatus, ComputerTypes computerType)
         {
             InitializeComponent();
 
@@ -26,41 +26,113 @@ namespace oop_2
 
             this.processor = new Processor();
 
-            this.comboBox1.Items.Add(Processor.processorBit.x32);
-            this.comboBox1.Items.Add(Processor.processorBit.x64);
+
+            this.computerType = computerType;
+            SetBuilder();
+
+            this.comboBox1.Items.Add(Bits.processorBit.x32);
+            this.comboBox1.Items.Add(Bits.processorBit.x64);
             this.comboBox1.SelectedIndex = 1;
         }
 
-       
+        //builder
+        private ProcessorBuilder ProcessorBuilder;
+        private ComputerTypes computerType;
 
         public Processor processor;
+
+
+        private void SetBuilder()
+        {
+            switch (this.computerType)
+            {
+                case ComputerTypes.Server:
+                    {
+                        this.ProcessorBuilder = new ServerProcessorBuilder();
+                        break;
+                    }
+
+                case ComputerTypes.PC:
+                    {
+                        this.ProcessorBuilder = new PCProcessorBuilder();
+                        break;
+                    }
+
+                case ComputerTypes.notebook:
+                    {
+                        this.ProcessorBuilder = new LaptopProcessorBuilder();
+                        break;
+                    }
+
+                case ComputerTypes.workingStation:
+                    {
+                        this.ProcessorBuilder = new WorkStationProcessorBuilder();
+                        break;
+                    }
+
+            }
+
+        }
 
         private void Form2_Load(object sender, EventArgs e)
         {
 
         }
 
+        private Bits.processorBit GetProcessorBit(int index)
+        {
+            switch (this.comboBox1.SelectedIndex)
+            {
+                case 0:
+                    {
+                        return Bits.processorBit.x32;
+                    }
+                case 1:
+                    {
+                        return Bits.processorBit.x64;
+                    }
+            default:
+                    {
+                        return Bits.processorBit.x64;
+                    }
+            }
+        }
         private void okClick(object sender, EventArgs e)
         {
 
-            /*  if (
-                  (this.processor.Manufactor == null || this.processor.Manufactor == "") ||
-                  (this.processor.Model == null || this.processor.Model == "") ||
-                  (this.processor.Series == null || this.processor.Series == "") ||
-                  this.processor.Cores == 0 ||
-                  this.processor.Frenquecy == 0 ||
-                  this.processor.sizeL1 == 0 ||
-                  this.processor.sizeL2 == 0 ||
-                  this.processor.sizeL3 == 0
-              )
-                  return;*/
+            
+            this.ProcessorBuilder.SetBits(new Bits {
+                BitArchitecture = GetProcessorBit(comboBox1.SelectedIndex)
+            });
 
-            if(!Validate(this.processor))
+            this.ProcessorBuilder.SetCache(new Cache
+            {
+                L1 = Convert.ToInt32(richTextBox8.Text),
+                L2 = Convert.ToInt32(richTextBox9.Text),
+                L3 = Convert.ToInt32(richTextBox10.Text)
+            });
+
+            this.ProcessorBuilder.SetManufacter(new Manufactur
+            {
+                man = richTextBox1.Text,
+                Model = richTextBox2.Text,
+                Series = richTextBox3.Text
+            });
+
+            this.ProcessorBuilder.SetPower(new Power
+            {
+                Cores = Convert.ToInt32(richTextBox4.Text),
+                Frenquecy = Convert.ToInt32(richTextBox5.Text)
+            });
+
+            if(!Validate(this.ProcessorBuilder.Processor))
             {
                 return;
             }
+
             ChangeStatus("Added processor");
-            this.AddProcessor(this.processor);
+
+            this.AddProcessor(this.ProcessorBuilder.Processor);
             this.Close();
         }
 
@@ -73,17 +145,15 @@ namespace oop_2
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-            this.processor.Manufactor = this.richTextBox1.Text;
         }
 
         private void richTextBox2_TextChanged(object sender, EventArgs e)
         {
-            this.processor.Series = this.richTextBox2.Text;
-        }
+         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch(this.comboBox1.SelectedIndex)
+           /* switch(this.comboBox1.SelectedIndex)
             {
                 case 0:
                     {
@@ -95,12 +165,11 @@ namespace oop_2
                         this.processor.BitArchitecture = Processor.processorBit.x64;
                         break;
                     }
-            }
+            }*/
         }
 
         private void richTextBox3_TextChanged(object sender, EventArgs e)
         {
-            this.processor.Model = this.richTextBox3.Text;
         }
 
         private void richTextBox4_TextChanged(object sender, EventArgs e)
@@ -110,7 +179,6 @@ namespace oop_2
                 this.richTextBox4.Text = "";
                 return;
             }
-            this.processor.Cores = Convert.ToInt16(this.richTextBox4.Text);
         }
 
         private void digitLimitation(object sender, KeyPressEventArgs e)
@@ -127,7 +195,6 @@ namespace oop_2
                 this.richTextBox5.Text = "";
                 return; 
             }
-            this.processor.Frenquecy = Convert.ToInt32(this.richTextBox5.Text);
         }
 
         private void richTextBox8_TextChanged(object sender, EventArgs e)
@@ -137,8 +204,7 @@ namespace oop_2
                 this.richTextBox8.Text = "";
                 return;
             }
-            this.processor.sizeL1 = Convert.ToInt32(richTextBox8.Text);
-        }
+       }
 
         private void richTextBox9_TextChanged(object sender, EventArgs e)
         {
@@ -147,8 +213,8 @@ namespace oop_2
                 this.richTextBox9.Text = "";
                 return;
             }
-            this.processor.sizeL2 = Convert.ToInt32(this.richTextBox9.Text);
-        }
+/*            this.processor.sizeL2 = Convert.ToInt32(this.richTextBox9.Text);
+*/        }
 
         private void richTextBox10_TextChanged(object sender, EventArgs e)
         {
@@ -157,7 +223,6 @@ namespace oop_2
                 this.richTextBox10.Text = "";
                 return;
             }
-            this.processor.sizeL3 = Convert.ToInt32(this.richTextBox10.Text);
         }
         private static bool Validate(Processor processor)
         {

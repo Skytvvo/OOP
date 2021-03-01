@@ -4,148 +4,64 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-
+using System.Xml.Serialization;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
 
 namespace oop_2
 {
+
+    public interface IComputer
+    {
+        IComputer Clone();
+    }
+
     [Serializable]
-    public class Computer
+    [XmlInclude(typeof(WorkStationDefaultConfig))]
+    [XmlInclude(typeof(WorkStationHardware))]
+    public class Computer : IComputer 
     {
         
-        public enum ComputerTypes {
-            Server, workingStation, notebook, PC
-        };
-
-        public enum RamTypes
-        {
-            ddr1, ddr2, ddr3, ddr4, ddr5
-        }
-
-        public enum DriveTypes
-        {
-            ssd, hdd, shdd
-        }
-       
-        ComputerTypes type;
-        [Required]
-        public ComputerTypes Type
-        {
-            get
-            {
-                return this.type;
-            }
-            set
-            {
-                this.type = value;
-            }
-        }
-
-        
-        Processor processor;
-        [Required]
-        public Processor _Processor
-        {
-            get
-            {
-                return this.processor;
-            }
-            set
-            {
-                this.processor = value;
-            }
-        }
-       
-        string videocard;
-        [Required]
-        [StringLength(50, MinimumLength = 3)]
-        public string Videocard
-        {
-            get
-            {
-                return this.videocard;
-            }
-            set
-            {
-                this.videocard = value;
-            }
-        }
-
-        RamTypes ramType;
-        [Required]
-
-        public RamTypes TypeOfRam
-        {
-            get
-            {
-                return this.ramType;
-            }
-            set
-            {
-                this.ramType = value;
-            }
-        }
-
-       
-        int driveSize;
-        [Required]
-        [Range(1, 99999)]
-        public int DriveSize
-        {
-            get
-            {
-                return this.driveSize;
-            }
-            set
-            {
-                this.driveSize = value;
-            }
-        }
-        DriveTypes driveType;
-        [Required]
-
-        public DriveTypes DriveType
-        {
-            get
-            {
-                return this.driveType;
-            }
-            set
-            {
-                this.driveType = value;
-            }
-        }
-       
-
-        string purchaseTime;
-        [Required]
-        [StringLength(100, MinimumLength = 3)]
-        public string PurchaseTime
-        {
-            get
-            {
-                return this.purchaseTime;
-            }
-            set
-            {
-                this.purchaseTime = value;
-            }
-
-        }
-
-        public Computer(ComputerTypes type, Processor processor, string videocard, RamTypes ramType, int driveSize, DriveTypes driveType, string purchaseTime)
-        {
-            this.type = type;
-            this.processor = processor;
-            this.videocard = videocard;
-            this.ramType = ramType;
-            this.driveSize = driveSize;
-            this.driveType = driveType;
-            this.purchaseTime = purchaseTime;
-        }
-
         public Computer()
         {
 
         }
+        
+
+        public ComputerConfig config;
+        
+
+        public ComputerHardware hardware;
+       
+        
+
+        public Computer(IFactory factory)
+        {
+            config = factory.CreateConfig();
+            hardware = factory.CreateHardware();
+        }
+
+        public IComputer Clone()
+        {
+            return this.MemberwiseClone() as IComputer;
+        }
+
+        public object DeepCopy()
+        {
+            object figure = null;
+            using (MemoryStream tempStream = new MemoryStream())
+            {
+                BinaryFormatter binFormatter = new BinaryFormatter(null,
+                    new StreamingContext(StreamingContextStates.Clone));
+
+                binFormatter.Serialize(tempStream, this);
+                tempStream.Seek(0, SeekOrigin.Begin);
+
+                figure = binFormatter.Deserialize(tempStream);
+            }
+            return figure;
+        }
+
     }
 }
